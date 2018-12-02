@@ -10,20 +10,12 @@
 namespace Inventario.Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class tblProductos
+    public partial class spsObtenerCategoriasActivas_Result
     {
-        public int idProducto { get; set; }
+        public int idCategoria { get; set; }
         public string nombre { get; set; }
         public string descripcion { get; set; }
-        public int cantidad { get; set; }
-        public string marca { get; set; }
-        public System.DateTime fechaCreacion { get; set; }
-        public int idCategoria { get; set; }
         public bool esActivo { get; set; }
-        public string unidadMedida { get; set; }
-    
-        public virtual tblCategorias tblCategorias { get; set; }
     }
 }

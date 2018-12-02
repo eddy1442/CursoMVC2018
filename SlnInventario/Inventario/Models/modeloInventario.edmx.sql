@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 12/01/2018 17:01:58
+-- Date Created: 12/01/2018 18:19:10
 -- Generated from EDMX file: C:\Users\Admin\CursoMVC2018\SlnInventario\Inventario\Models\modeloInventario.edmx
 -- --------------------------------------------------
 
@@ -25,6 +25,9 @@ GO
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[sysdiagrams]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[sysdiagrams];
+GO
 IF OBJECT_ID(N'[dbo].[tblCategorias]', 'U') IS NOT NULL
     DROP TABLE [dbo].[tblCategorias];
 GO
@@ -50,12 +53,22 @@ CREATE TABLE [dbo].[tblProductos] (
     [idProducto] int IDENTITY(1,1) NOT NULL,
     [nombre] nvarchar(50)  NOT NULL,
     [descripcion] varchar(max)  NOT NULL,
-    [cantidad] nvarchar(50)  NOT NULL,
+    [cantidad] int  NOT NULL,
     [marca] nvarchar(50)  NOT NULL,
     [fechaCreacion] datetime  NOT NULL,
     [idCategoria] int  NOT NULL,
     [esActivo] bit  NOT NULL,
     [unidadMedida] nvarchar(50)  NULL
+);
+GO
+
+-- Creating table 'sysdiagrams'
+CREATE TABLE [dbo].[sysdiagrams] (
+    [name] nvarchar(128)  NOT NULL,
+    [principal_id] int  NOT NULL,
+    [diagram_id] int IDENTITY(1,1) NOT NULL,
+    [version] int  NULL,
+    [definition] varbinary(max)  NULL
 );
 GO
 
@@ -73,6 +86,12 @@ GO
 ALTER TABLE [dbo].[tblProductos]
 ADD CONSTRAINT [PK_tblProductos]
     PRIMARY KEY CLUSTERED ([idProducto] ASC);
+GO
+
+-- Creating primary key on [diagram_id] in table 'sysdiagrams'
+ALTER TABLE [dbo].[sysdiagrams]
+ADD CONSTRAINT [PK_sysdiagrams]
+    PRIMARY KEY CLUSTERED ([diagram_id] ASC);
 GO
 
 -- --------------------------------------------------
