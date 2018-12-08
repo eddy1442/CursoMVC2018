@@ -4,11 +4,22 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0acbc1dd17e54710ae39b8b716d78b20" Name="Diagram1">
-        <EntityTypeShape EntityType="dbInventarioModel.tblCategorias" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbInventarioModel.tblProductos" Width="2.75" PointX="3.375" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="dbInventarioModel.FK_tblProductos_tblCategorias" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="dbInventarioModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="3.75" />
+      <Diagram DiagramId="f49a2c79845642dfabdbc2190a737b5e" Name="Diagram1">
+        <EntityTypeShape EntityType="dbInventarioModel.Categoria" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbInventarioModel.Cliente" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbInventarioModel.DetalleFactura" Width="1.5" PointX="7.5" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbInventarioModel.Factura" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbInventarioModel.Producto" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbInventarioModel.Rol" Width="1.5" PointX="8.125" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbInventarioModel.Telefono" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbInventarioModel.Usuario" Width="1.5" PointX="10.375" PointY="4" IsExpanded="true" />
+        <AssociationConnector Association="dbInventarioModel.FK_Producto_Categoria" ManuallyRouted="false" />
+        <AssociationConnector Association="dbInventarioModel.FK_Cliente_Telefono" ManuallyRouted="false" />
+        <AssociationConnector Association="dbInventarioModel.FK_Factura_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="dbInventarioModel.FK_DetalleFactura_DetalleFactura" ManuallyRouted="false" />
+        <AssociationConnector Association="dbInventarioModel.FK_DetalleFactura_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="dbInventarioModel.FK_Usuario_Rol" ManuallyRouted="false" />
+        <AssociationConnector Association="dbInventarioModel.FK_Telefono_Telefono" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
